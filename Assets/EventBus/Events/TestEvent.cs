@@ -1,24 +1,10 @@
 using UnityEngine;
 
-public struct TestEvent : IEventBus
-{
-    
-}
+public struct TestEvent : IEventBus {}
 
-public struct TestEvent_i : IEventBus
-{
-    public int i;
-}
+public struct TestEvent_i : IEventBus<int> {}
 
-public struct TestEvent_ii : IEventBus
-{
-    public int i1;
-    public int i2;
-}
+public struct TestEvent_ii : IEventBus<int, int> {}
+public struct TestEvent_ii_2 : IEventBus<int, int> {}
 
-public struct TestEvent_iii : IEventBus
-{
-    public int i1;
-    public int i2;
-    public int i3;
-}
+public struct TestEvent_iii : IEventBus<int, int, int> {}
