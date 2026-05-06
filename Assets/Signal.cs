@@ -21,5 +21,13 @@ public class Signal : MonoBehaviour
         this.Publish(EventCenterHighPerformance.EventName.TestEvent_iii, 42, 84, 168);
         elapsed_time = (Time.realtimeSinceStartup - start_time) * 1000f;
         Debug.Log($"EventCenterHighPerformance方法总耗时: {elapsed_time}ms");
+
+        start_time = Time.realtimeSinceStartup;
+        EventBus<TestEvent>.Publish(new TestEvent());
+        EventBus<TestEvent_i>.Publish(new TestEvent_i { i = 42 });
+        EventBus<TestEvent_ii>.Publish(new TestEvent_ii { i1 = 42, i2 = 84 });
+        EventBus<TestEvent_iii>.Publish(new TestEvent_iii { i1 = 42, i2 = 84, i3 = 168 });
+        elapsed_time = (Time.realtimeSinceStartup - start_time) * 1000f;
+        Debug.Log($"EventBus方法总耗时: {elapsed_time}ms");
     }
 }

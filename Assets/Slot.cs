@@ -15,8 +15,30 @@ public class Slot : MonoBehaviour
         this.Subscribe(EventCenterHighPerformance.EventName.TestEvent_i, OnTestEvent_i);
         this.Subscribe(EventCenterHighPerformance.EventName.TestEvent_ii, OnTestEvent_ii);
         this.Subscribe(EventCenterHighPerformance.EventName.TestEvent_iii, OnTestEvent_iii);
+
+        EventBus<TestEvent>.Subscribe(OnTestEvent);
+        EventBus<TestEvent_i>.Subscribe(OnTestEvent_i);
+        EventBus<TestEvent_ii>.Subscribe(OnTestEvent_ii);
+        EventBus<TestEvent_iii>.Subscribe(OnTestEvent_iii);
     }
 
+    private void OnTestEvent(TestEvent e)
+    {
+        Debug.Log("TestEvent received from EventBus!");
+    }
+    private void OnTestEvent_i(TestEvent_i e)
+    {
+        Debug.Log($"TestEvent_i received from EventBus with arg: {e.i}");
+    }
+    private void OnTestEvent_ii(TestEvent_ii e)
+    {
+        Debug.Log($"TestEvent_ii received from EventBus with args: {e.i1}, {e.i2}");
+    }
+    private void OnTestEvent_iii(TestEvent_iii e)
+    {
+        Debug.Log($"TestEvent_iii received from EventBus with args: {e.i1}, {e.i2}, {e.i3}");
+    }
+    
     private void OnTestEvent()
     {
         Debug.Log("TestEvent received!");
