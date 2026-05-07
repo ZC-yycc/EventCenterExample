@@ -1,20 +1,21 @@
-using EventCenter;
-using EventCenterHighPerformance;
+using EventCenterDictionary;
+using EventCenterArray;
+using EventBus;
 using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
     void Awake()
     {
-        this.Subscribe(EventCenter.EventName.TestEvent, OnTestEvent);
-        this.Subscribe(EventCenter.EventName.TestEvent_i, OnTestEvent_i);
-        this.Subscribe(EventCenter.EventName.TestEvent_ii, OnTestEvent_ii);
-        this.Subscribe(EventCenter.EventName.TestEvent_iii, OnTestEvent_iii);
+        this.Subscribe(EventCenterDictionary.EventName.TestEvent, OnTestEvent);
+        this.Subscribe(EventCenterDictionary.EventName.TestEvent_i, OnTestEvent_i);
+        this.Subscribe(EventCenterDictionary.EventName.TestEvent_ii, OnTestEvent_ii);
+        this.Subscribe(EventCenterDictionary.EventName.TestEvent_iii, OnTestEvent_iii);
 
-        this.Subscribe(EventCenterHighPerformance.EventName.TestEvent, OnTestEvent);
-        this.Subscribe(EventCenterHighPerformance.EventName.TestEvent_i, OnTestEvent_i);
-        this.Subscribe(EventCenterHighPerformance.EventName.TestEvent_ii, OnTestEvent_ii);
-        this.Subscribe(EventCenterHighPerformance.EventName.TestEvent_iii, OnTestEvent_iii);
+        this.Subscribe(EventCenterArray.EventName.TestEvent, OnTestEvent);
+        this.Subscribe(EventCenterArray.EventName.TestEvent_i, OnTestEvent_i);
+        this.Subscribe(EventCenterArray.EventName.TestEvent_ii, OnTestEvent_ii);
+        this.Subscribe(EventCenterArray.EventName.TestEvent_iii, OnTestEvent_iii);
 
         EventBus<TestEvent>.OnEvent += OnTestEvent;
         EventBus<TestEvent_i, int>.OnEvent += OnTestEvent_i;

@@ -1,4 +1,4 @@
-namespace EventCenterHighPerformance
+namespace EventCenterArray
 {
     using static EventCenter;
 

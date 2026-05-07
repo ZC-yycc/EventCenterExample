@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace EventCenterHighPerformance
+namespace EventCenterArray
 {
     public static class EventCenter
     {

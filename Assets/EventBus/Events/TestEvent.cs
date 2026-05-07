@@ -1,9 +1,11 @@
-using UnityEngine;
+namespace EventBus
+{
+    // 定义事件类型
+    public struct TestEvent : IEventBus { }
 
-public struct TestEvent : IEventBus {}
+    public struct TestEvent_i : IEventBus<int> { }
 
-public struct TestEvent_i : IEventBus<int> {}
+    public struct TestEvent_ii : IEventBus<int, int> { }
 
-public struct TestEvent_ii : IEventBus<int, int> {}
-
-public struct TestEvent_iii : IEventBus<int, int, int> {}
+    public struct TestEvent_iii : IEventBus<int, int, int> { }
+}

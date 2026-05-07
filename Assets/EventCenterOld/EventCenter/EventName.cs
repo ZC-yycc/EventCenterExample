@@ -1,4 +1,4 @@
-namespace EventCenter
+namespace EventCenterDictionary
 {
     using static EventCenter;
     
